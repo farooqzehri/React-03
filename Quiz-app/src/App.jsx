@@ -33,7 +33,6 @@ const App = () => {
   // current question shortcut
   const question = questions[currentQuestion];
 
-  // ---------------- SUBMIT ANSWER ----------------
   const handleSubmit = () => {
     if (!selected) return;
 
