@@ -1,72 +1,176 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const App = () => {
 
-  const [data, setData] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [questions, setQuestions] = useState([]);
+  const [loading, setLoading] = useState(true);
 
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [selected, setSelected] = useState(null);
+
+  const [score, setScore] = useState(0);
+  const [submitted, setSubmitted] = useState(false);
+  const [showResult, setShowResult] = useState(false);
+
+  // ---------------- FETCH QUESTIONS ----------------
   useEffect(() => {
-    axios('https://the-trivia-api.com/v2/questions')
-      .then(res => {
-        setData(res.data)
-      })
-      .catch(err => console.log("Error fetching data:", err))
-      .finally(() => setLoading(false))
-  }, [])
+    axios("https://the-trivia-api.com/v2/questions")
+      .then((res) => {
 
+        // options ko ek baar shuffle karna
+        const formatted = res.data.map((q) => ({
+          ...q,
+          options: [...q.incorrectAnswers, q.correctAnswer]
+            .sort(() => Math.random() - 0.5),
+        }));
+
+        setQuestions(formatted);
+      })
+      .finally(() => setLoading(false));
+  }, []);
+
+  // current question shortcut
+  const question = questions[currentQuestion];
+
+  // ---------------- SUBMIT ANSWER ----------------
+  const handleSubmit = () => {
+    if (!selected) return;
+
+    setSubmitted(true);
+
+    if (selected === question.correctAnswer) {
+      setScore(score + 1);
+    }
+  };
+
+  // ---------------- NEXT QUESTION ----------------
+  const handleNext = () => {
+    setSubmitted(false);
+    setSelected(null);
+
+    if (currentQuestion + 1 < questions.length) {
+      setCurrentQuestion(currentQuestion + 1);
+    } else {
+      setShowResult(true);
+    }
+  };
+
+  // ---------------- RESTART QUIZ ----------------
+  const handleRestart = () => {
+    setCurrentQuestion(0);
+    setScore(0);
+    setSelected(null);
+    setSubmitted(false);
+    setShowResult(false);
+  };
+
+  // ---------------- LOADING ----------------
+  if (loading) {
+    return <h1 className="text-center mt-20 text-2xl">Loading...</h1>;
+  }
+
+  // ---------------- RESULT SCREEN ----------------
+  if (showResult) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-100">
+        <div className="bg-white p-8 rounded-2xl shadow-lg text-center w-[400px]">
+          <h1 className="text-3xl font-bold mb-4">Quiz Finished 🎉</h1>
+          <p className="text-xl mb-6">
+            Your Score: <span className="font-bold">{score}</span> / {questions.length}
+          </p>
+
+          <button
+            onClick={handleRestart}
+            className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700"
+          >
+            Restart Quiz
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // ---------------- MAIN QUIZ ----------------
   return (
     <div className="min-h-screen bg-gray-100 p-6">
-      
-      {/* Title */}
-      <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">
-        Quiz App
-      </h1>
 
-      {/* Loading */}
-      {loading && (
-        <p className="text-center text-lg font-medium text-gray-600">
-          Loading...
-        </p>
-      )}
+      <div className="max-w-2xl mx-auto bg-white p-6 rounded-2xl shadow-md">
 
-      {/* Questions */}
-      <div className="max-w-3xl mx-auto space-y-6">
-        {data.map((item) => (
+        {/* TITLE */}
+        <h1 className="text-2xl font-bold mb-4 text-center">Quiz App</h1>
+
+        {/* PROGRESS BAR */}
+        <div className="w-full bg-gray-200 h-3 rounded mb-6">
           <div
-            key={item.id}
-            className="bg-white shadow-md rounded-xl p-6 border border-gray-200"
-          >
-            {/* Question */}
-            <h2 className="text-lg font-semibold mb-4 text-gray-800">
-              {item.question.text}
-            </h2>
+            className="bg-blue-600 h-3 rounded"
+            style={{
+              width: `${((currentQuestion + 1) / questions.length) * 100}%`,
+            }}
+          ></div>
+        </div>
 
-            {/* Options */}
-            <ul className="space-y-3">
-              {[...item.incorrectAnswers, item.correctAnswer]
-                .sort(() => Math.random() - 0.5)
-                .map((option, index) => (
-                  <li
-                    key={index}
-                    className="flex items-center gap-3 bg-gray-50 hover:bg-gray-100 p-3 rounded-lg cursor-pointer transition"
-                  >
-                    <input
-                      type="radio"
-                      name={item.id}
-                      value={option}
-                      className="w-4 h-4"
-                    />
-                    <span className="text-gray-700">{option}</span>
-                  </li>
-                ))}
-            </ul>
-          </div>
-        ))}
+        {/* QUESTION COUNT */}
+        <p className="mb-2 text-gray-600">
+          Question {currentQuestion + 1} / {questions.length}
+        </p>
+
+        {/* QUESTION */}
+        <h2 className="text-lg font-semibold mb-4">
+          {question.question.text}
+        </h2>
+
+        {/* OPTIONS */}
+        <ul className="space-y-3">
+          {question.options.map((option, index) => {
+
+            let style = "bg-gray-50";
+
+            // color logic after submit
+            if (submitted) {
+              if (option === question.correctAnswer) {
+                style = "bg-green-200";
+              } else if (option === selected) {
+                style = "bg-red-200";
+              }
+            }
+
+            return (
+              <li
+                key={index}
+                onClick={() => !submitted && setSelected(option)}
+                className={`p-3 rounded-lg cursor-pointer border ${style}
+                ${selected === option ? "border-blue-500" : "border-gray-200"}`}
+              >
+                {option}
+              </li>
+            );
+          })}
+        </ul>
+
+        {/* BUTTONS */}
+        <div className="mt-6 flex justify-between">
+
+          {!submitted ? (
+            <button
+              onClick={handleSubmit}
+              className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700"
+            >
+              Submit
+            </button>
+          ) : (
+            <button
+              onClick={handleNext}
+              className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700"
+            >
+              Next
+            </button>
+          )}
+
+        </div>
       </div>
-
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
