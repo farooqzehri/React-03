@@ -30,7 +30,7 @@ const App = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  // current question shortcut
+ 
   const question = questions[currentQuestion];
 
   const handleSubmit = () => {
