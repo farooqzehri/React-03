@@ -13,12 +13,11 @@ const App = () => {
   const [submitted, setSubmitted] = useState(false);
   const [showResult, setShowResult] = useState(false);
 
-  // ---------------- FETCH QUESTIONS ----------------
+
   useEffect(() => {
     axios("https://the-trivia-api.com/v2/questions")
       .then((res) => {
 
-        // options ko ek baar shuffle karna
         const formatted = res.data.map((q) => ({
           ...q,
           options: [...q.incorrectAnswers, q.correctAnswer]
@@ -43,7 +42,7 @@ const App = () => {
     }
   };
 
-  // ---------------- NEXT QUESTION ----------------
+
   const handleNext = () => {
     setSubmitted(false);
     setSelected(null);
@@ -55,7 +54,7 @@ const App = () => {
     }
   };
 
-  // ---------------- RESTART QUIZ ----------------
+
   const handleRestart = () => {
     setCurrentQuestion(0);
     setScore(0);
@@ -64,12 +63,11 @@ const App = () => {
     setShowResult(false);
   };
 
-  // ---------------- LOADING ----------------
   if (loading) {
     return <h1 className="text-center mt-20 text-2xl">Loading...</h1>;
   }
 
-  // ---------------- RESULT SCREEN ----------------
+
   if (showResult) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-100">
@@ -90,16 +88,15 @@ const App = () => {
     );
   }
 
-  // ---------------- MAIN QUIZ ----------------
+
   return (
     <div className="min-h-screen bg-gray-100 p-6">
 
       <div className="max-w-2xl mx-auto bg-white p-6 rounded-2xl shadow-md">
 
-        {/* TITLE */}
         <h1 className="text-2xl font-bold mb-4 text-center">Quiz App</h1>
 
-        {/* PROGRESS BAR */}
+    
         <div className="w-full bg-gray-200 h-3 rounded mb-6">
           <div
             className="bg-blue-600 h-3 rounded"
@@ -109,23 +106,23 @@ const App = () => {
           ></div>
         </div>
 
-        {/* QUESTION COUNT */}
+
         <p className="mb-2 text-gray-600">
           Question {currentQuestion + 1} / {questions.length}
         </p>
 
-        {/* QUESTION */}
+    
         <h2 className="text-lg font-semibold mb-4">
           {question.question.text}
         </h2>
 
-        {/* OPTIONS */}
+      
         <ul className="space-y-3">
           {question.options.map((option, index) => {
 
             let style = "bg-gray-50";
 
-            // color logic after submit
+       
             if (submitted) {
               if (option === question.correctAnswer) {
                 style = "bg-green-200";
@@ -147,7 +144,7 @@ const App = () => {
           })}
         </ul>
 
-        {/* BUTTONS */}
+      
         <div className="mt-6 flex justify-between">
 
           {!submitted ? (
