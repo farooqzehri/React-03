@@ -21,12 +21,12 @@ export const App = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-100 via-gray-50 to-slate-200 p-6">
       
-      {/* Header */}
+      
       <h1 className="text-4xl md:text-5xl font-bold text-center mb-10 text-gray-800">
         🛒 Ecommerce Store
       </h1>
 
-      {/* Loading */}
+
       {loading && (
         <div className="flex justify-center items-center h-40">
           <h1 className="text-2xl font-semibold animate-pulse text-gray-600">
