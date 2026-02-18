@@ -21,7 +21,7 @@ export const App = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-100 via-gray-50 to-slate-200 p-6">
       
-      
+
       <h1 className="text-4xl md:text-5xl font-bold text-center mb-10 text-gray-800">
         🛒 Ecommerce Store
       </h1>
@@ -35,7 +35,6 @@ export const App = () => {
         </div>
       )}
 
-      {/* Products Grid */}
       {!loading && (
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {data.map((item) => (
@@ -43,7 +42,7 @@ export const App = () => {
               key={item.id}
               className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group hover:-translate-y-2"
             >
-              {/* Image */}
+             
               <div className="overflow-hidden">
                 <img
                   src={item.images[0]}
@@ -52,7 +51,7 @@ export const App = () => {
                 />
               </div>
 
-              {/* Content */}
+              
               <div className="p-5">
                 <p className="text-sm uppercase text-indigo-500 font-semibold mb-1">
                   {item.category}
