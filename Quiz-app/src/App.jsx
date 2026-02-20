@@ -64,7 +64,7 @@ const App = () => {
   };
 
   if (loading) {
-    return <h1 className="text-center mt-20 text-2xl">Loading...</h1>;
+    return <h1 className="text-center mt-20 text-2xl">Loading....</h1>;
   }
 
 
