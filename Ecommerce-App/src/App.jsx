@@ -19,7 +19,7 @@ export const App = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-100 via-gray-50 to-slate-200 p-6">
+    <div className="min-h-screen bg-gradient-to-br from-slate-200 via-gray-50 to-slate-200 p-6">
       
 
       <h1 className="text-4xl md:text-5xl font-bold text-center mb-10 text-gray-800">
