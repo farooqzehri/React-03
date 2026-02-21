@@ -172,40 +172,84 @@
 // export default App;
 
 
-
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
+import shuffle from 'shuffle-array'
 
 function App() {
-  const [data , setData] = useState([])
+  const [question , setQuestion] = useState(null)
   const [error , setError] = useState(false)
   const [loading , setLoading] = useState(true)
+  const [index , setIndex] = useState(0)
+  const [result, setResult] = useState(false);
+  const [marks, setMarks] = useState(0)
+
+  const input = useRef([])
 
   useEffect(() => {
     axios('https://the-trivia-api.com/v2/questions')
     .then(res => {
-      setData(res.data)
-      console.log(res.data);
-      
+      setQuestion(res.data)
     })
-    .catch(err => {
-        setError(err)
+    .catch(() => {
+      setError(true)
     })
-    .finally(load => {
-      setLoading(load)
+    .finally(()=> {
+      setLoading(false)
     })
   }  , [])
+
+  function nextQuestion(){
+    const selectedOption = input.current.find(item => item && item.checked);
+
+    if (!selectedOption) {
+      alert("Select option first")
+      return
+    }
+
+    if (question[index].correctAnswer === selectedOption.value) {
+      setMarks(prev => prev + 10)
+    }
+
+    if (index < question.length - 1) {
+      setIndex(prev => prev + 1)
+    } else {
+      setResult(true)
+    }
+  }
+
   return (
     <>
     <h1>Quiz App</h1>
-    {loading && <h1>Loading...</h1>}
-    {error && <h1>error Agya</h1>}
-    {data && <div className='question' ></div>}
 
-      
-  
-    
+    {loading && <h1>Loading...</h1>}
+    {error && <h1>Error Agya</h1>}
+    {result && <h1>You got {marks}</h1>}
+
+    {question && !result && (
+      <div key={question[index].id}>
+        <h1>Q{index + 1}: {question[index].question.text}</h1>
+
+        {shuffle([...question[index].incorrectAnswers, question[index].correctAnswer])
+        .map((item , i) => (
+          <div key={`option${i}`}>
+            <input 
+              type="radio" 
+              name='question' 
+              value={item} 
+              id={i} 
+              ref={el => input.current[i] = el}
+            />
+            <label htmlFor={i}>{item}</label>
+          </div>
+        ))}
+
+        <br /><br />
+        <button onClick={nextQuestion}>Next</button>
+      </div>
+    )}
     </>
   )
 }
+
 export default App
