@@ -322,7 +322,7 @@ function App() {
               className="w-full py-4 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-xl font-bold text-lg 
                        shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 active:scale-95 transition-all mt-4"
             >
-              NEXT QUESTION
+              NEXT QUESTION:
             </button>
           </div>
         )}
