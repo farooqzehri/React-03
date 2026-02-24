@@ -227,7 +227,7 @@ function App() {
       <div className="w-full max-w-xl bg-slate-800/40 backdrop-blur-md border border-slate-700 p-8 rounded-3xl shadow-2xl">
         
         <h1 className="text-4xl font-black text-center mb-8 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent italic">
-          QUIZ MASTER
+          QUIZ MASTER:
         </h1>
 
         {loading && (
