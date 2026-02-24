@@ -27,7 +27,7 @@
 //         setQuestions(formatted);
 //       })
 //       .finally(() => setLoading(false));
-//   }, []);
+//   }, [])
 
  
 //   const question = questions[currentQuestion];
