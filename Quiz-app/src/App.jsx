@@ -238,7 +238,7 @@ function App() {
 
         {error && (
           <div className="bg-red-500/20 border border-red-500 text-red-200 p-4 rounded-xl text-center">
-            Something went wrong. Please refresh.
+            Something went wrong. Please refresh:
           </div>
         )}
 
