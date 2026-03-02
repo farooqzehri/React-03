@@ -6,9 +6,9 @@ function App() {
     <>
     <h1>Counter App</h1>
     <div>
-    <button onClick={()=>setCounter(counter + 1)}>+</button>
+    <button  onClick={()=>setCounter(counter + 1)}>+</button>
       <h1>{counter}</h1>
-    <button onClick={()=>setCounter(counter - 1)}>-</button>
+    <button   onClick={()=>setCounter(counter - 1)}>-</button>
     </div>
     </>
   )
