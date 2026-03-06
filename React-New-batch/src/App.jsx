@@ -5,6 +5,9 @@ function App() {
     <div>
       <h1>Hello World.</h1>
       <h3>{counter}</h3>
+      <button onClick={() => setCounter(counter + 1 )}>+</button>
+      <button onClick={() => {setCounter(counter - 1 )}}>-</button>
+      <button>reset</button>
     </div>
   )
 }
