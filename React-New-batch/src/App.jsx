@@ -7,7 +7,7 @@ function App() {
       <h3>{counter}</h3>
       <button onClick={() => setCounter(counter + 1 )}>+</button>
       <button onClick={() => {setCounter(counter - 1 )}}>-</button>
-      <button>reset</button>
+      <button onClick={() => {setCounter(0)}}>reset</button>
     </div>
   )
 }
