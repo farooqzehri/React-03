@@ -24,6 +24,12 @@ function Newapp(){
   const add = () => {
     setCounter(counter + 1)
   }
+  const less = () => {
+    if( counter > 0){
+      setCounter(counter - 1)
+
+    }
+  }
 
   return (
     <>
@@ -31,7 +37,7 @@ function Newapp(){
 
       <button onClick={add}>Add</button>
       <h2>{counter}</h2>
-      <button>Less</button>
+      <button onClick={less}>Less</button>
     </>
   )
 }
