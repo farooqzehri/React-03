@@ -20,10 +20,13 @@
 import { useState  } from "react";
 
 function Newapp(){
+  const [counter , setCounter] = useState(0)
 
   return (
     <>
-    
+      <h1>hello</h1>
+
+      <h2>{counter}</h2>
     </>
   )
 }
