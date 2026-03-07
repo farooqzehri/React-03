@@ -1,15 +1,29 @@
-import React, { useState } from 'react'
-import './app.css'
-function App() {
-  const [counter , setCounter] = useState(0)
+// import React, { useState } from 'react'
+// import './app.css'
+// function App() {
+//   const [counter , setCounter] = useState(0)
+//   return (
+//     <div>
+//       <h1>Hello World.</h1>
+//       <h3>{counter}</h3>
+//       <button onClick={() => setCounter(counter + 1 )}>+</button>
+//       <button onClick={() => {setCounter(counter - 1 )}}>-</button>
+//       <button onClick={() => {setCounter(0)}}>reset</button>
+//     </div>
+//   )
+// }
+// export default App
+
+
+//                Class second ==> hooks
+
+import { useState  } from "react";
+
+function Newapp(){
+
   return (
-    <div>
-      <h1>Hello World.</h1>
-      <h3>{counter}</h3>
-      <button onClick={() => setCounter(counter + 1 )}>+</button>
-      <button onClick={() => {setCounter(counter - 1 )}}>-</button>
-      <button onClick={() => {setCounter(0)}}>reset</button>
-    </div>
+    <>
+    
+    </>
   )
 }
-export default App
