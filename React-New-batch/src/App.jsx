@@ -21,12 +21,15 @@ import { useState  } from "react";
 
 function Newapp(){
   const [counter , setCounter] = useState(0)
+  const add = () => {
+    setCounter(counter + 1)
+  }
 
   return (
     <>
       <h1>hello</h1>
 
-      <button>Add</button>
+      <button onClick={add}>Add</button>
       <h2>{counter}</h2>
       <button>Less</button>
     </>
