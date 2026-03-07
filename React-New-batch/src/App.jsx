@@ -26,7 +26,10 @@ function Newapp(){
     <>
       <h1>hello</h1>
 
+      <button>Add</button>
       <h2>{counter}</h2>
+      <button>Less</button>
     </>
   )
 }
+export default Newapp
