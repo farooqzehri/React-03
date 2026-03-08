@@ -42,7 +42,7 @@ function Newapp(){
       <button onClick={add}>Add</button>
       <h2>{counter}</h2>
       <button onClick={less}>Less</button>
-      <button>Reset</button>
+      <button onClick={reset}>Reset</button>
     </>
   )
 }
