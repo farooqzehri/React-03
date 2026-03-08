@@ -31,7 +31,7 @@ function Newapp(){
     }
   }
   const reset = ()=> {
-    
+    setCounter(0)
   }
 
 
