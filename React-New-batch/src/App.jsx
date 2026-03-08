@@ -30,6 +30,9 @@ function Newapp(){
 
     }
   }
+  const reset = ()=> {
+    
+  }
 
 
   return (
