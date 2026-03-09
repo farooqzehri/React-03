@@ -7,10 +7,21 @@ function App() {
   const Addtodo = (event) => {
     event.preventDefault()
     todo.push({title , desc})
-    setTital("")
-    setDesc("")
+   
     console.log(todo);
+    console.log(title);
+    console.log(desc);
+    setTodo([...todo])
+     setTital("")
+    setDesc("")
     
+  }
+
+  const edit = (index) => {
+    const newtitle = prompt('Enter the new value.'  , todo[index].title )
+    todo[index].title = newtitle
+    setTodo([...todo])
+
   }
   return (
     <>
@@ -20,6 +31,17 @@ function App() {
     <input type="text" title={desc} onChange={(e) => setDesc(e.target.value)} placeholder='Enter the description.'/>
     <button>Submit</button>
     </form>
+    
+
+  {todo.length > 0 ? todo.map((item , index) => {
+      return <div key={index}>
+          <h3>Title: {item.title}</h3>
+          <h5>Desc: {item.desc}</h5>
+
+          <button>Delete</button>
+          <button onClick={edit}>Edit</button>
+      </div>
+    } ) : <h1>No Todo Found...</h1>}
   
     </>
   )
