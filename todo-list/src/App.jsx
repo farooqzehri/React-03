@@ -7,13 +7,16 @@ function App() {
   const Addtodo = (event) => {
     event.preventDefault()
     todo.push({title , desc})
+    setTital('')
+    setDesc('')
+    console.log(todo);
     
   }
   return (
     <>
     <h1>Hello World!</h1>
-    <form > 
-        <input type="text" value={title} placeholder='Enter the title.'/>
+    <form onSubmit={Addtodo}> 
+        <input type="text" value={title} onChange={(e) => setTital(e.target.value)} placeholder='Enter the title.'/>
     <input type="text" title={desc} placeholder='Enter the description.'/>
     <button>Submit</button>
     </form>
