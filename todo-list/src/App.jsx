@@ -7,8 +7,8 @@ function App() {
   const Addtodo = (event) => {
     event.preventDefault()
     todo.push({title , desc})
-    setTital('')
-    setDesc('')
+    setTital("")
+    setDesc("")
     console.log(todo);
     
   }
@@ -17,7 +17,7 @@ function App() {
     <h1>Hello World!</h1>
     <form onSubmit={Addtodo}> 
         <input type="text" value={title} onChange={(e) => setTital(e.target.value)} placeholder='Enter the title.'/>
-    <input type="text" title={desc} placeholder='Enter the description.'/>
+    <input type="text" title={desc} onChange={(e) => setDesc(e.target.value)} placeholder='Enter the description.'/>
     <button>Submit</button>
     </form>
   
