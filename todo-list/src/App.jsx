@@ -17,10 +17,12 @@ function App() {
     
   }
 
-  const edit = (index) => {
-    const newtitle = prompt('Enter the new value.'  , todo[index].title )
-    todo[index].title = newtitle
-    setTodo([...todo])
+  const edit = (index)=>{
+    console.log("edit todo " , index);
+
+    const title = prompt('enter updated title' , todo[index].title);
+    todo[index].title = title
+    setTodo([...todo]);
 
   }
   return (
