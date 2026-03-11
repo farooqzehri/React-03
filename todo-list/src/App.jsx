@@ -50,7 +50,7 @@ function App() {
             <h3>Title: {item.title}</h3>
             <h5>Desc: {item.desc}</h5>
             <button onClick={() => deleteTodo(index)}>Delete</button>   {/* ✅ Fixed */}
-            <button onClick={() => edit(item, index)}>Edit</button>     {/* ✅ Fixed */}
+            <button onClick={() => edit(item, index)}>Edit</button>    
           </div>
         )
       }) : <h1>No Todo Found...</h1>}
