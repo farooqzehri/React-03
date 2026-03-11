@@ -14,7 +14,7 @@ function App() {
 
   const edit = (item, index) => {
     const newTitle = prompt("Enter updated title:", todo[index].title);
-    if (newTitle === null) return; // user cancelled
+    if (newTitle === null) return; 
     const updatedTodo = [...todo];
     updatedTodo[index] = { ...updatedTodo[index], title: newTitle };
     setTodo(updatedTodo);
@@ -49,7 +49,7 @@ function App() {
           <div key={index}>
             <h3>Title: {item.title}</h3>
             <h5>Desc: {item.desc}</h5>
-            <button onClick={() => deleteTodo(index)}>Delete</button>   {/* ✅ Fixed */}
+            <button onClick={() => deleteTodo(index)}>Delete</button>  
             <button onClick={() => edit(item, index)}>Edit</button>    
           </div>
         )
