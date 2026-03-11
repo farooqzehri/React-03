@@ -1,50 +1,59 @@
 import React, { useState } from 'react'
 
 function App() {
- const [todo , setTodo] = useState([]);
-  const [title , setTital] = useState('');
-  const [desc , setDesc] = useState('');
-  const Addtodo = (event) => {
-    event.preventDefault()
-    todo.push({title , desc})
-   
-    console.log(todo);
-    console.log(title);
-    console.log(desc);
-    setTodo([...todo])
-     setTital("")
-    setDesc("")
-    
+  const [todo, setTodo] = useState([]);
+  const [title, setTitle] = useState('');
+  const [desc, setDesc] = useState('');
+
+  const addTodo = (event) => {
+    event.preventDefault();
+    setTodo([...todo, { title, desc }]);
+    setTitle("");
+    setDesc("");
   }
 
-  const edit = (item , index)=>{
-    console.log("edit todo " , todo[index]);
+  const edit = (item, index) => {
+    const newTitle = prompt("Enter updated title:", todo[index].title);
+    if (newTitle === null) return; // user cancelled
+    const updatedTodo = [...todo];
+    updatedTodo[index] = { ...updatedTodo[index], title: newTitle };
+    setTodo(updatedTodo);
+  };
 
-    const newtitle = prompt('enter updated title');
-    todo[index].title = newtitle
-    setTodo([...todo]);
+  const deleteTodo = (index) => {
+    const updatedTodo = todo.filter((_, i) => i !== index);
+    setTodo(updatedTodo);
+  };
 
-  }
   return (
     <>
-    <h1>Hello World!</h1>
-    <form onSubmit={Addtodo}> 
-        <input type="text" value={title} onChange={(e) => setTital(e.target.value)} placeholder='Enter the title.'/>
-    <input type="text" title={desc} onChange={(e) => setDesc(e.target.value)} placeholder='Enter the description.'/>
-    <button>Submit</button>
-    </form>
-    
+      <h1>Hello World!</h1>
+      <form onSubmit={addTodo}>
+        <input
+          type="text"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder='Enter the title.'
+        />
+        <input
+          type="text"
+          value={desc}               
+          onChange={(e) => setDesc(e.target.value)}
+          placeholder='Enter the description.'
+        />
+        <button>Submit</button>
+      </form>
 
-  {todo.length > 0 ? todo.map((item , index) => {
-      return <div key={index}>
-          <h3>Title: {item.title}</h3>
-          <h5>Desc: {item.desc}</h5>
-
-          <button>Delete</button>
-          <button onClick={edit}>Edit</button>
-      </div>
-    } ) : <h1>No Todo Found...</h1>}
-  
+      {todo.length > 0 ? todo.map((item, index) => {
+        return (
+          <div key={index}>
+            <h3>Title: {item.title}</h3>
+            <h5>Desc: {item.desc}</h5>
+            <button onClick={() => deleteTodo(index)}>Delete</button>   {/* ✅ Fixed */}
+            <button onClick={() => edit(item, index)}>Edit</button>     {/* ✅ Fixed */}
+          </div>
+        )
+      }) : <h1>No Todo Found...</h1>}
     </>
   )
 }
