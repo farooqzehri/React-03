@@ -510,7 +510,7 @@ export default function App() {
           {/* Header */}
           <div className="header">
             <div className="header-eyebrow">Task Manager</div>
-            <h1>Its <span>Farooq</span><br />Zehri</h1>
+            <h1>Your <span>Focus</span><br />Board</h1>
             <p className="header-sub">Clarity through organized intention.</p>
           </div>
 
