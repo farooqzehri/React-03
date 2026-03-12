@@ -439,7 +439,7 @@ export default function App() {
   const [todos, setTodos] = useState([])
   const [title, setTitle] = useState('')
   const [desc, setDesc] = useState('')
-  const [editModal, setEditModal] = useState(null) // { index, title, desc }
+  const [editModal, setEditModal] = useState(null)
   const [editTitle, setEditTitle] = useState('')
   const [editDesc, setEditDesc] = useState('')
 
