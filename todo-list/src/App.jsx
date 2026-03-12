@@ -474,7 +474,7 @@ export default function App() {
     <>
       <style>{styles}</style>
 
-      {/* Edit Modal */}
+     
       {editModal !== null && (
         <div className="modal-overlay" onClick={() => setEditModal(null)}>
           <div className="modal" onClick={e => e.stopPropagation()}>
