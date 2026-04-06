@@ -1,13 +1,13 @@
 import React from 'react'
-import Router from '../pages/ReactRouter/Router'
+import Router from './ReactRouter/Router'
 
 function App() {
-  return (
-    <>
-    <h1>Hello World.</h1>
-        <Router/>
-    </>
-  )
+    
+    return (
+        <>
+            <Router />
+        </>
+    )
 }
 
 export default App

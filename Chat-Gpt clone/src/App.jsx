@@ -40,7 +40,7 @@ const sendMessage = async () => {
 return (
 <div style={{padding:"40px"}}>
 
-    <h1>AI Chatbot 🤖</h1>
+    <h1>JimnatixGPT</h1>
 
     <input
         value={message}

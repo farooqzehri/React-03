@@ -288,29 +288,6 @@ function App() {
                              transition-all duration-200 peer-checked:bg-blue-600 peer-checked:border-blue-400 
                              peer-checked:scale-[1.02] hover:bg-slate-700/60"
                   >
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                  
                     {item}
                   </label>
                 </div>
