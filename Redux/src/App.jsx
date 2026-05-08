@@ -4,24 +4,24 @@ import { addTodo, deletTodo, editTodo } from './config/redux-toolkit/reducers/to
 
 function App() {
   const [input, setInput] = useState('')
-  
-  // selector.todo gives the slice: { todo: [...] }
-  const todos = useSelector(state => state.todo.todo)  // ✅ get the array directly
+
+
+  const todos = useSelector(state => state.todo.todo) 
   const dispatch = useDispatch();
 
   const addTodoToRedux = (event) => {
     event.preventDefault();
     dispatch(addTodo({ title: input }))
-    setInput('') // ✅ clear input after adding
+    setInput('') 
   }
 
   const deleteTodoFromRedux = (id) => {
-    dispatch(deletTodo({ id }))  // ✅ wrap in object so action.payload.id works
+    dispatch(deletTodo({ id })) 
   }
 
   const editTodoFromRedux = (oldtitle, id) => {
     const title = prompt('enter the new title', oldtitle)
-    if (title) dispatch(editTodo({ id, title }))  // ✅ guard against null (user hits cancel)
+    if (title) dispatch(editTodo({ id, title })) 
   }
 
   return (
