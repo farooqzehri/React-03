@@ -33,7 +33,7 @@ function Home() {
             <h3>{item.title}</h3>
             <h5>{item.category}</h5>
             <h2>${item.price}</h2>
-            <button onClick={() => Navigate(`/product/${item.id}`)}>Details</button>
+            <button onClick={()=>Navigate(`/products/${item.id}`)}>Details</button>
         </div>
     })}
     </>
