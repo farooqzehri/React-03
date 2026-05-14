@@ -7,18 +7,7 @@ function SinglePage() {
   const [ data , setData]  = useState([])
 
   const {id} = useParams()
-  useEffect(() => {
-    fetch(`https://fakestoreapiserver.reactbd.org/api/products/${id}`)
-    .then(res => res.json())
-    .then(res => {
-      console.log(res);
-      setData(res)
-    }).catch(() => {
-      setError(true)
-    }).finally(() => {
-      setLoading(false)
-    })
-  } , [])
+  useEffect()
   return (
     <>
     {loading && <h2>Loading..</h2>}
