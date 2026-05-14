@@ -9,6 +9,7 @@ function SinglePage() {
   const {id} = useParams()
   useEffect(() => {
     fetch(`https://fakestoreapiserver.reactbd.org/api/products/${id}`)
+    .then
   })
   return (
     <>
