@@ -10,7 +10,11 @@ function SinglePage() {
   useEffect(() => {
     fetch(`https://fakestoreapiserver.reactbd.org/api/products/${id}`)
     .then(res => res.json())
-  })
+    .then(res => {
+      console.log(res.data);
+      setData(res.data)
+    })
+  } , [])
   return (
     <>
     {loading && <h2>Loading..</h2>}
