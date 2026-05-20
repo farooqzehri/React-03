@@ -5,6 +5,7 @@ import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Users from './pages/Users.jsx'
 import Navbar from './components/Navbar.jsx'
+import SingleUser from './pages/SingleUser.jsx'
 
 createRoot(document.getElementById('root')).render(
 <BrowserRouter>
@@ -13,6 +14,7 @@ createRoot(document.getElementById('root')).render(
   <Route index element={<Home/>}/>
   <Route path="/about" element={<About/>}/>
   <Route path="/users" element={<Users/>}/>
+  <Route path='/singleuser/:id' element={<SingleUser/>}/>
 </Routes>
 </BrowserRouter>
 )
