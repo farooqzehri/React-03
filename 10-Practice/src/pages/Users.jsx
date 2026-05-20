@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function Users() {
     const customers = [
@@ -40,7 +41,7 @@ function Users() {
                     <p>Email: {item.email}</p>
                     <p>Phone: {item.phone}</p>
                     <p>Address: {item.address}</p>
-                    <button onClick={navigate(`/singleUser/${item.id}`) }>Details</button>
+                    <button onClick={navigate(`/singleUser`) }>Details</button>
                 </div>
             }) }
         </ul>
