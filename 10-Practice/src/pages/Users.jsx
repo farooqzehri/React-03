@@ -1,8 +1,8 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 
 function Users() {
-    const customers = [
+ const customers = [
         { 
             id: 1, name: 'John Doe' ,
            email: 'john.doe@example.com',
@@ -31,6 +31,7 @@ function Users() {
 
     ]
     const navigate = useNavigate()
+    const {id} = useParams()
   return (
     <div>Users
         <ul>
@@ -41,7 +42,7 @@ function Users() {
                     <p>Email: {item.email}</p>
                     <p>Phone: {item.phone}</p>
                     <p>Address: {item.address}</p>
-                    <button onClick={navigate(`/singleUser`) }>Details</button>
+                    <button onClick={() => navigate(`/singleuser/${item.id}`) }>Details</button>
                 </div>
             }) }
         </ul>
