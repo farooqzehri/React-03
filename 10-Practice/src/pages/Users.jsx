@@ -29,6 +29,7 @@ function Users() {
         }
 
     ]
+    const navigate = useNavigate()
   return (
     <div>Users
         <ul>
@@ -39,6 +40,7 @@ function Users() {
                     <p>Email: {item.email}</p>
                     <p>Phone: {item.phone}</p>
                     <p>Address: {item.address}</p>
+                    <button onClick={navigate(`/singleUser/${item.id}`) }>Details</button>
                 </div>
             }) }
         </ul>
