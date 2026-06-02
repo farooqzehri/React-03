@@ -5,7 +5,7 @@ function About() {
     <div>About
 
       <form>
-        <input type="email" placeholder=''  />
+        <input type="email" placeholder='enter Your Email'  />
         
       </form>
     </div>
