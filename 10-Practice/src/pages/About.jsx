@@ -22,7 +22,10 @@ function About() {
         </form>
         <div>
           {todos.map((item) => {
-            return <div key={item}>{item}</div>
+            return <div key={item}>
+              <h3>{item.}</h3>
+              h4
+            </div>
           })}
         </div>
     </div>
