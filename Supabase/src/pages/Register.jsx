@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { supabase } from '../supabase'
 
 function Register() {
@@ -6,17 +6,22 @@ function Register() {
     const [password, setPassword] = useState('')
     const registerUser = async (e) => {
         e.preventDefault()
-        console.log(email, password);
+        if (!email || !password) {
+            alert('Email and password are required.')
+            return
+        }
+        if (password.length < 8) {
+            alert('Password must be at least 8 characters long.')
+            return
+        }
 
         const { data, error } = await supabase.auth.signUp({
             email, password
-
         })
         if (error) {
             alert(error.message)
         } else {
             alert('Check your email for confirmation!')
-            console.log(data)
         }
 
     }
