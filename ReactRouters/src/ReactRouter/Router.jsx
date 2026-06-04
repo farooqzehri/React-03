@@ -4,7 +4,7 @@ import Home from '../pages/Home'
 import About from '../pages/About'
 import Contact from '../pages/Contact'
 import Services from '../pages/Services'
-import Navbar from '../components/navbar'
+import Navbar from '../components/Navbar'
 
 const Router = () => {
   return (

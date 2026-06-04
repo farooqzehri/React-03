@@ -1,31 +1,23 @@
-import { useEffect, useState } from 'react'
+import React from 'react'
 import { useParams } from 'react-router-dom'
+import useFetch from '../../../shared/hooks/useFetch'
+import LoadingState from '../../../shared/components/LoadingState'
 
 function SinglePage() {
-  const [ loading , setLoading] = useState(true)
-  const [ error , setError] = useState(false)
-  const [ data , setData]  = useState([])
+  const { id } = useParams()
+  const [loading, error, data] = useFetch(`https://fakestoreapiserver.reactbd.org/api/products/${id}`)
 
-  const {id} = useParams()
-  useEffect(() => {
-    fetch(`https://fakestoreapiserver.reactbd.org/api/products/${id}`)
-    .then(res => res.json())
-    .then(res => {
-      console.log(res.data);
-      setData(res.data)
-    })
-  } , [])
   return (
     <>
-    {loading && <h2>Loading..</h2>}
-    {error && <h2>Error..</h2>}
-    {data && 
-      <div key={data.title}>
-        <img width={200} src={data.image} alt={data.title} />
-        <h1>{data.title}</h1>
-        <p>{data.description}</p>
-      </div>
-    }
+      <LoadingState loading={loading} error={error}>
+        {data && data.data && (
+          <div key={data.data.title}>
+            <img width={200} src={data.data.image} alt={data.data.title} />
+            <h1>{data.data.title}</h1>
+            <p>{data.data.description}</p>
+          </div>
+        )}
+      </LoadingState>
     </>
   )
 }
