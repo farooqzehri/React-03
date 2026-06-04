@@ -3,12 +3,13 @@ import React, { useState } from 'react'
 function About() {
   const [input , setInput] = useState('')
   const [ todos , setTodos] = useState([])
-  const []
+  const [input2 , setInput2] = useState('')
 
   const addTodo = (e) => {
     e.preventDefault()
-    setTodos([...todos , input])
+    setTodos([...todos , { todo: input, description: input2 }])
     setInput('')
+    setInput2('')
   }
   return (
     <div>About
