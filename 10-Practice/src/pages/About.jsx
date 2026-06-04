@@ -14,7 +14,7 @@ function About() {
 
       <form onSubmit={addTodo}>
         <input type="text" placeholder='enter Your Todo'  value={input} onChange={e => setInput(e.target.value)} />
-        <input type="text" placeholder='Enter Your ' />
+        <input type="text" placeholder='Enter Your descriptions' />
         <button>add Todo</button>
         </form>
         <div>
