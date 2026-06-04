@@ -11,7 +11,6 @@ function Home() {
         fetch('https://dummyjson.com/products')
         .then(res => res.json())
         .then(res => {
-            console.log(res.products);
             setData(res.products)
             
         }).catch(() => {

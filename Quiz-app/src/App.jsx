@@ -188,7 +188,6 @@ function App() {
     axios('https://the-trivia-api.com/v2/questions')
       .then(res => {
         setQuestion(res.data)
-        console.log(res.data);
         
       })
       .catch(() => {
