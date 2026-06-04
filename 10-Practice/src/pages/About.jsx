@@ -5,16 +5,22 @@ function About() {
   const [ todos , setTodos] = useState([])
 
   const addTodo = (e) => {
-    
+    e.preventDefault()
+    setTodos([...todos , input])
+    setInput('')
   }
   return (
     <div>About
 
-      <form>
-        <input type="text" placeholder='enter Your Email'  value={input} onChange={e => setInput(e.target.value)} />
+      <form onSubmit={addTodo}>
+        <input type="text" placeholder='enter Your Todo'  value={input} onChange={e => setInput(e.target.value)} />
         <button>add Todo</button>
-        
-      </form>
+        </form>
+        <div>
+          {todos.map((item) => {
+            return <div key={item}>{item}</div>
+          })}
+        </div>
     </div>
   )
 }
