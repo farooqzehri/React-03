@@ -7,7 +7,7 @@ function About() {
     <div>About
 
       <form>
-        <input type="text" placeholder='enter Your Email'  value={} />
+        <input type="text" placeholder='enter Your Email'  value={input} onChange={e => setInput(e.target.value)} />
         <button>add Todo</button>
         
       </form>
