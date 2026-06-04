@@ -9,10 +9,18 @@ function SinglePage() {
   const {id} = useParams()
   useEffect(() => {
     fetch(`https://fakestoreapiserver.reactbd.org/api/products/${id}`)
-    .then(res => res.json())
     .then(res => {
-      console.log(res.data);
+      if (!res.ok) throw new Error(`HTTP error: ${res.status}`)
+      return res.json()
+    })
+    .then(res => {
       setData(res.data)
+    })
+    .catch(err => {
+      setError(err.message || 'Failed to fetch product')
+    })
+    .finally(() => {
+      setLoading(false)
     })
   } , [])
   return (
