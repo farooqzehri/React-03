@@ -21,10 +21,10 @@ function About() {
         <button>add Todo</button>
         </form>
         <div>
-          {todos.map((item) => {
-            return <div key={item}>
-              <h3>{item.}</h3>
-              h4
+          {todos.map((item , index) => {
+            return <div key={index}>
+              <h3>{item.todo}</h3>
+              <h4>{item.description}</h4>
             </div>
           })}
         </div>
