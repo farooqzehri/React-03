@@ -8,6 +8,7 @@ function Home() {
       <ul>
         <li>Home Item 1</li>
         <li>Home Item 2</li>
+        <li>Home Item 3</li>
       </ul>
 
     </div>
