@@ -7,6 +7,7 @@ function Home() {
       <p>This is the home page content.</p>
       <ul>
         <li>Home Item 1</li>
+        <li>Home Item 2</li>
       </ul>
 
     </div>
