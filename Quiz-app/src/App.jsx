@@ -176,7 +176,7 @@ import shuffle from 'shuffle-array'
 
 function App() {
   const [question, setQuestion] = useState(null)
-  const [error, setError] = useState(false)
+  const [error, setError] = useState(null)
   const [loading, setLoading] = useState(true)
   const [index, setIndex] = useState(0)
   const [result, setResult] = useState(false)
@@ -188,11 +188,9 @@ function App() {
     axios('https://the-trivia-api.com/v2/questions')
       .then(res => {
         setQuestion(res.data)
-        console.log(res.data);
-        
       })
-      .catch(() => {
-        setError(true)
+      .catch((err) => {
+        setError(err.message || 'Failed to load quiz questions')
       })
       .finally(() => {
         setLoading(false)
