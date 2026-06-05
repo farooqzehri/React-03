@@ -1,39 +1,25 @@
-import React, { useEffect, useState } from 'react'
-import Navbar from '../components/Navbar'
-import { data, useNavigate, useParams } from 'react-router-dom'
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import useFetch from '../../../shared/hooks/useFetch'
+import LoadingState from '../../../shared/components/LoadingState'
 
 function Home() {
-    const [error , setError] = useState(false)
-    const [loading , setLoading] = useState(true)
-    const [data , setData] = useState([])
-  useEffect(() => {
-    fetch('https://fakestoreapiserver.reactbd.org/api/products')
-    .then(res => res.json())
-    .then(res => {
-        console.log(res.data);
-        setData(res.data)
-    }).catch(err => {
-        setError(err)
-    }).finally(() => {
-        setLoading(false)
-    })
-  }, [])
+  const [loading, error, data] = useFetch('https://fakestoreapiserver.reactbd.org/api/products')
   const navigate = useNavigate()
 
-    return (
+  return (
     <>
-    <h1>Home.</h1>
-    {error && <h1>Abort...!!</h1>}
-    {loading && <h1>LOading...</h1>}
-    {data.length > 0 && data.map(item => {
-        return <div key={item.title}>
-        <img width={200} src={item.image} alt={item.title} />
-        <h1>{item.title}</h1>
-        <p>{item.description}</p>
-        <button onClick={()=> navigate(`/products/${item._id}`)}>details</button>
-        </div>
-    })}
-    
+      <h1>Home.</h1>
+      <LoadingState loading={loading} error={error}>
+        {data && data.data && data.data.map(item => (
+          <div key={item.title}>
+            <img width={200} src={item.image} alt={item.title} />
+            <h1>{item.title}</h1>
+            <p>{item.description}</p>
+            <button onClick={() => navigate(`/products/${item._id}`)}>details</button>
+          </div>
+        ))}
+      </LoadingState>
     </>
   )
 }

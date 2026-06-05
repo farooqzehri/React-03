@@ -1,18 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router'
-import Home from '../pages/Home'
-import About from '../pages/About'
+import SharedNavbar from '../../../shared/components/Navbar'
 
+const links = [
+  { to: '/', label: 'Home' },
+  { to: '/about', label: 'About' },
+  { to: '/bucket', label: 'Bucket' },
+]
 
 function Navbar() {
   return (
-<nav>
-<Link to={'/'}>Home</Link>
-<Link to={'/about'}>About</Link>
-<Link to={'/bucket'}> Bucket</Link>
-
-<button>Cart</button>
-</nav>
+    <nav>
+      <SharedNavbar links={links} LinkComponent={Link} />
+      <button>Cart</button>
+    </nav>
   )
 }
 
