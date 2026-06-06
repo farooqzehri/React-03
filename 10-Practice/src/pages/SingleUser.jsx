@@ -31,7 +31,9 @@ function SingleUser() {
         {
             id:5 , name: 'charle chaplin',
             email: 'charlie.chaplin@example.com',
-                phone: '555-987-6543', address: '202 Cedar St, Final Town, USA',
+            phone: '555-987-6543', address: '202 Cedar St, Final Town, USA',
+            image: 'https://randomuser.me/api/portraits/men/5.jpg'
+
         }
 
     ]
