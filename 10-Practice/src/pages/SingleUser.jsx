@@ -31,7 +31,7 @@ function SingleUser() {
         {
             id:5 , name: 'charle chaplin',
             email: 'charlie.chaplin@example.com',
-        
+                phone: '555-987-6543', address: '202 Cedar St, Final Town, USA',
         }
 
     ]
