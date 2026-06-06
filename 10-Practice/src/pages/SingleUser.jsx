@@ -30,7 +30,8 @@ function SingleUser() {
         },
         {
             id:5 , name: 'charle chaplin',
-           
+            email: 'charlie.chaplin@example.com',
+        
         }
 
     ]
