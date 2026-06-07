@@ -36,7 +36,7 @@ function SingleUser() {
 
         },
         {
-            id:6 , name: ''
+            id:6 , name: 'Alice smith'
         }
 
     ]
