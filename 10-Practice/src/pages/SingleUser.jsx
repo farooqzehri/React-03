@@ -38,7 +38,8 @@ function SingleUser() {
         {
             id:6 , name: 'Alice smith',
             email: 'alice.smith@example.com',
-            
+            phone: '555-555-1234', address: '303 Birch St, Last Town, USA',
+
         }
 
     ]
