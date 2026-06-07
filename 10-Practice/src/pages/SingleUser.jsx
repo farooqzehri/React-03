@@ -36,7 +36,9 @@ function SingleUser() {
 
         },
         {
-            id:6 , name: 'Alice smith'
+            id:6 , name: 'Alice smith',
+            email: 'alice.smith@example.com',
+            
         }
 
     ]
