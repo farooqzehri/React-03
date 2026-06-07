@@ -34,6 +34,9 @@ function SingleUser() {
             phone: '555-987-6543', address: '202 Cedar St, Final Town, USA',
             image: 'https://randomuser.me/api/portraits/men/5.jpg'
 
+        },
+        {
+            id:6 , name: ''
         }
 
     ]
