@@ -8,7 +8,7 @@ function App() {
     fetch("https://api.freeapi.app/api/v1/public/randomproducts")
       .then(res => res.json())
       .then(res => setProducts(res.data.data))
-      .catch(err => console.error(err))
+      .catch(() => setLoading(false))
       .finally(() => setLoading(false));
   }, []);
 
