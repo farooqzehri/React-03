@@ -41,6 +41,12 @@ function SingleUser() {
             phone: '555-555-1234', address: '303 Birch St, Last Town, USA',
             image: 'https://randomuser.me/api/portraits/women/6.jpg',
 
+        },
+        {
+            id:7 , name: 'bob johnson',
+            // email: 'bob.johnson@example.com',
+            // phone: '555-555-5555', address: '789 Oak St, Another town, USA',
+            // image: 'https://randomuser.me/api/portraits/men/7.jpg'
         }
 
     ]
