@@ -44,7 +44,7 @@ function SingleUser() {
         },
         {
             id:7 , name: 'bob johnson',
-            // email: 'bob.johnson@example.com',
+            email: 'bob.johnson@example.com',
             // phone: '555-555-5555', address: '789 Oak St, Another town, USA',
             // image: 'https://randomuser.me/api/portraits/men/7.jpg'
         }
