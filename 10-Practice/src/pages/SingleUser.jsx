@@ -50,7 +50,7 @@ function SingleUser() {
         },
         {
             id:8 , name: 'fariha',
-                 email: 'farihakhan@example.com',
+            email: 'farihakhan@example.com',
             phone: '555-555-2222',
             image: 'https://randomuser.me.api.portraits/woman/8.jpg'
 
