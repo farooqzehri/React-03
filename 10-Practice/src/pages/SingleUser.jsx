@@ -51,7 +51,7 @@ function SingleUser() {
         {
             id:8 , name: 'fariha',
                  email: 'farihakhan@example.com',
-          
+            phone: '555-555-2222',
         }
 
     ]
