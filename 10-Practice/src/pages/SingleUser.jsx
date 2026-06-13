@@ -57,7 +57,8 @@ function SingleUser() {
         },
         {
             id:9, name: 'charlie brown',
-            email:'charlie.brown@example.com'
+            email:'charlie.brown@example.com',
+            phone: '555-555-3333', address: '404 Maple St, Final Town, USA',
         }
 
     ]
