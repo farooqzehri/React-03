@@ -57,6 +57,7 @@ function SingleUser() {
         },
         {
             id:9, name: 'charlie brown',
+            email:'charlie.brown@example.com'
         }
 
     ]
