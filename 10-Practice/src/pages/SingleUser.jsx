@@ -54,6 +54,9 @@ function SingleUser() {
             phone: '555-555-2222',
             image: 'https://randomuser.me.api.portraits/woman/8.jpg'
 
+        },
+        {
+            id:9,
         }
 
     ]
