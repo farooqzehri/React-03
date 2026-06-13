@@ -56,7 +56,7 @@ function SingleUser() {
 
         },
         {
-            id:9,
+            id:9, name: 'charlie brown',
         }
 
     ]
