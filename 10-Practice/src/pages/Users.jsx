@@ -27,7 +27,8 @@ function Users() {
             email: 'alice@example.com',         
             phone: '555-123-4567', address: '101 Pine St, Yet Another Town, USA',
             image: 'https://randomuser.me/api/portraits/women/4.jpg'
-        }
+        },
+        
 
     ]
     const navigate = useNavigate()
