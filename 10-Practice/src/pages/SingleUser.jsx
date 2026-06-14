@@ -60,6 +60,9 @@ function SingleUser() {
             email:'charlie.brown@example.com',
             phone: '555-555-3333', address: '404 Maple St, Final Town, USA',
             image: 'https://randomuser.me/api/portraits/men/9.jpg'
+        },
+        {
+            id:10,
         }
 
     ]
