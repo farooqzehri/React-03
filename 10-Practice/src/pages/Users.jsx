@@ -29,11 +29,11 @@ function Users() {
             image: 'https://randomuser.me/api/portraits/women/4.jpg'
         },
         {
-            id:5,  name: 'alice smith',
+            id:5,  name: 'Alice Smith',
             email: 'alicesmith@example.com',
             phone: '555-987-6543',
-            // address: '202 Maple St, One More Town, USA',
-            // image: 'https://randomuser.me/api/portraits/women/5.jpg'
+            address: '202 Maple St, One More Town, USA',
+            image: 'https://randomuser.me/api/portraits/women/5.jpg'
         }
         
 
