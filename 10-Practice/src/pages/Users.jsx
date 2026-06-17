@@ -29,7 +29,7 @@ function Users() {
             image: 'https://randomuser.me/api/portraits/women/4.jpg'
         },
         {
-            id:5, 
+            id:5,  name: 
         }
         
 
