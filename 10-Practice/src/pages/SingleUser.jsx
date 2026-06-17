@@ -62,7 +62,8 @@ function SingleUser() {
             image: 'https://randomuser.me/api/portraits/men/9.jpg'
         },
         {
-            id:10, name: 'david smith'
+            id:10, name: 'david smith',
+            
         }
 
     ]
