@@ -37,6 +37,7 @@ function Users() {
         },
         {
             id: 6, name: 'Charlie Brown',
+            email: 'charlie@example.com',
         }
         
 
