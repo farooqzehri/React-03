@@ -34,6 +34,9 @@ function Users() {
             phone: '555-987-6543',
             address: '202 Maple St, One More Town, USA',
             image: 'https://randomuser.me/api/portraits/women/5.jpg'
+        },
+        {
+            id: 6,
         }
         
 
