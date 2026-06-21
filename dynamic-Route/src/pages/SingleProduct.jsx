@@ -9,13 +9,14 @@ function SingleProduct() {
   const {id} = useParams();
   useEffect(() => {
     fetch(`https://dummyjson.com/products/${id}`)
-    .then(res => res.json())
+    .then(res => {
+      if (!res.ok) throw new Error(`HTTP error: ${res.status}`)
+      return res.json()
+    })
     .then(res => {
       setData(res)
-      console.log(res);
-      
-    }).catch(() => {
-      setError(true)
+    }).catch((err) => {
+      setError(err.message || 'Failed to fetch product')
     }).finally(() => {
       setLoading(false)
     })
