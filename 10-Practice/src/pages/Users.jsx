@@ -45,7 +45,8 @@ function Users() {
         {
             id: 7, name: 'david Johnson',
             email: 'david.johnson@example.com',
-            // phone: ` 555-555-5678`, address: '404 Birch St, Final Town, USA',
+            phone: ` 555-555-5678`, address: '404 Birch St, Final Town, USA',
+            image: 'https://randomuser.me/api/portraits/men/7.jpg'
         }
         
 
