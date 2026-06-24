@@ -43,7 +43,7 @@ function Users() {
             image: 'https://randomuser.me/api/portraits/men/6.jpg'
         },
         {
-            id: 7, name: 'david'
+            id: 7, name: 'david Johnson',
         }
         
 
