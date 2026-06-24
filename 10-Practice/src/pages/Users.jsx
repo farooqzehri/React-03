@@ -44,6 +44,7 @@ function Users() {
         },
         {
             id: 7, name: 'david Johnson',
+            email: 'david.johnson@example.com',
         }
         
 
