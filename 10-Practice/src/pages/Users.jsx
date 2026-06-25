@@ -49,7 +49,9 @@ function Users() {
             image: 'https://randomuser.me/api/portraits/men/7.jpg'
         },
         {
-            id:8,
+            id:8, name: 'mickel',
+            email: 'mickel@example.com',
+            
         }
         
 
