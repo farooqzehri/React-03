@@ -51,7 +51,8 @@ function Users() {
         {
             id:8, name: 'mickel',
             email: 'mickel@example.com',
-            
+            phone: ''
+
         }
         
 
