@@ -51,7 +51,8 @@ function Users() {
         {
             id:8, name: 'mickel',
             email: 'mickel@example.com',
-            // phone: '555-555-9012', address: '505 Spruce St, Last Town, USA',
+            phone: '555-555-9012', address: '505 Spruce St, Last Town, USA',
+            image: 'https://randomuser.me/api/portraits/men/8.jpg'
 
         }
         
