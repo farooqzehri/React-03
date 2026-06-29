@@ -56,7 +56,7 @@ function Users() {
 
         },
         {
-            id:9,
+            id:9, name: 'alex star'
         }
         
 
