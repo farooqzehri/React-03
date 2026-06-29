@@ -54,6 +54,9 @@ function Users() {
             phone: '555-555-9012', address: '505 Spruce St, Last Town, USA',
             image: 'https://randomuser.me/api/portraits/men/8.jpg'
 
+        },
+        {
+            
         }
         
 
