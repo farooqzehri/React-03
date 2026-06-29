@@ -57,7 +57,8 @@ function Users() {
         },
         {
             id:9, name: 'alex star',
-            email: 'alex.star@example.com'
+            email: 'alex.star@example.com',
+            phone: '555-555-3456',
         }
         
 
