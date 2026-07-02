@@ -64,6 +64,7 @@ function Users() {
         },
         {
             id: 10, name: 'susan lee',
+            email: ''
         }
         
 
