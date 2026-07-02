@@ -63,7 +63,7 @@ function Users() {
             image: 'https://randomuser.me/api/portraits/men/9.jpg'
         },
         {
-            id: 10,
+            id: 10, name: 'susan lee',
         }
         
 
