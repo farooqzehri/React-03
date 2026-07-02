@@ -61,6 +61,9 @@ function Users() {
             phone: '555-555-3456',
             address: '606 Willow St, Last Town, USA',
             image: 'https://randomuser.me/api/portraits/men/9.jpg'
+        },
+        {
+            
         }
         
 
