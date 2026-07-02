@@ -64,7 +64,7 @@ function Users() {
         },
         {
             id: 10, name: 'susan lee',
-            email: ''
+            email: 'susan.lee@example.com',
         }
         
 
