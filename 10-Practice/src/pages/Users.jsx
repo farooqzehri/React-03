@@ -71,7 +71,8 @@ function Users() {
         {
             id:11, name: 'mike tyson',
             email: 'mike.tyson@example.com',
-            phone: '555-555-2345'
+            phone: '555-555-2345',
+            address: '808 Chestnut St, Last Town, USA',
         }
         
 
