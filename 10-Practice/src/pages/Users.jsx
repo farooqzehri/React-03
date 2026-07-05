@@ -70,6 +70,7 @@ function Users() {
         },
         {
             id:11, name: 'mike tyson',
+            email: 'mike.tyson@example.com'
         }
         
 
