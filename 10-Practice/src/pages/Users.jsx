@@ -69,7 +69,7 @@ function Users() {
             image: 'https://randomuser.me/api/portraits/women/10.jpg'
         },
         {
-            id:11, 
+            id:11, name: 'mike tyson',
         }
         
 
