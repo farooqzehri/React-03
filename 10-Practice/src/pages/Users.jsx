@@ -73,6 +73,7 @@ function Users() {
             email: 'mike.tyson@example.com',
             phone: '555-555-2345',
             address: '808 Chestnut St, Last Town, USA',
+            image: 'https://randomuser.me/api/portraits/men/11.jpg' 
         }
         
 
