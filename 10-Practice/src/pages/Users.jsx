@@ -76,7 +76,7 @@ function Users() {
             image: 'https://randomuser.me/api/portraits/men/11.jpg' 
         },
         {
-            id: 12, name: 'jorden mike',
+            // id: 12, name: 'jorden mike',
             email: 'jorden.mike@example.com',
             // phone: '555-555-6789', address: '909 Redwood St, Last Town, USA',
             // image: 'https://randomuser.me/api/portraits/men/12.jpg'
