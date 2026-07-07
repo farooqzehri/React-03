@@ -74,6 +74,9 @@ function Users() {
             phone: '555-555-2345',
             address: '808 Chestnut St, Last Town, USA',
             image: 'https://randomuser.me/api/portraits/men/11.jpg' 
+        },
+        {
+            id: 12, name: 'jorden mike'
         }
         
 
