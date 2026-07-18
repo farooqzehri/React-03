@@ -82,7 +82,8 @@ function Users() {
             image: 'https://randomuser.me/api/portraits/men/12.jpg'
             },
             {
-                id:13,
+                id:13, name: 'lisa simpson',
+                email: 'lisa.simpson@example.com'
             }
         
 
