@@ -89,7 +89,7 @@ function Users() {
 
             },
             {
-                id: 14,
+                id: 14, name: 'candal jenner'
             }
         
 
