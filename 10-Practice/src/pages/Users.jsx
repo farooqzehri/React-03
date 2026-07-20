@@ -95,7 +95,8 @@ function Users() {
                 image: 'https://randomuser.me/api/protriats/women/14.jpg'
             }.
             {
-                id: 15, name: 'kyle jenner'
+                id: 15, name: 'kyle jenner',
+                email: 'kyle.jenner@example.com'
             }
         
 
