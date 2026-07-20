@@ -93,6 +93,9 @@ function Users() {
                 email: 'kendal.jenner@gmail.com',
                 phone: '555-555-6585', address: 'saint-lorent new-york',
                 image: 'https://randomuser.me/api/protriats/women/14.jpg'
+            }.
+            {
+                id: 15, 
             }
         
 
