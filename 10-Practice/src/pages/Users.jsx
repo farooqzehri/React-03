@@ -86,7 +86,10 @@ function Users() {
                 email: 'lisa.simpson@example.com',
                 phone: '555-555-2342', address: '1010 Magnolia St, Last Town, USA',
                 image: 'https://randomuser.me/api/portriats/women/13.jpg'
-                
+
+            },
+            {
+                id: 14,
             }
         
 
