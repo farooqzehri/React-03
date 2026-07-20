@@ -98,7 +98,7 @@ function Users() {
                 id: 15, name: 'kyle jenner',
                 email: 'kyle.jenner@example.com',
                 phone: '555-555-4585',
-                address: 
+                address: 'state of malbury -use'
             }
         
 
