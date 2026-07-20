@@ -89,7 +89,9 @@ function Users() {
 
             },
             {
-                id: 14, name: 'candal jenner'
+                id: 14, name: 'kendal jenner',
+                email: 'kendal.jenner@gmail.com',
+                
             }
         
 
