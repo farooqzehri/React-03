@@ -95,7 +95,7 @@ function Users() {
                 image: 'https://randomuser.me/api/protriats/women/14.jpg'
             }.
             {
-                id: 15, 
+                id: 15, name: ''
             }
         
 
