@@ -93,14 +93,17 @@ function Users() {
                 email: 'kendal.jenner@gmail.com',
                 phone: '555-555-6585', address: 'saint-lorent new-york',
                 image: 'https://randomuser.me/api/portriats/women/14.jpg'
-            }.
+            },
             {
                 id: 15, name: 'kyle jenner',
                 email: 'kyle.jenner@example.com',
                 phone: '555-555-4585',
                 address: 'state of malbury -use',
                 image: 'https://randomuser.me/api/portriats/women/15.jpg'
-            }
+            },
+            {
+                id : 16,
+            }                                               
         
 
     ]
