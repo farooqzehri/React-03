@@ -106,7 +106,9 @@ function Users() {
                 name: 'emily smith',
                 email: 'emily.smith@example.com',
                 phone: '555-555-2342',
-                address: 'new clean0smith, california'
+                address: 'new clean0smith, california',
+                image: 'https://randomuser.me/api/portriats/women/16.jpg'
+                
             }                                               
         
 
