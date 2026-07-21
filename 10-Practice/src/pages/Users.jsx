@@ -103,7 +103,9 @@ function Users() {
             },
             {
                 id : 16,
-                name: 'emily smith'
+                name: 'emily smith',
+                email: 'emily.smith@example.com'
+                
             }                                               
         
 
