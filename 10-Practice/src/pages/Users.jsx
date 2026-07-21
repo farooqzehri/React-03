@@ -106,7 +106,7 @@ function Users() {
                 name: 'emily smith',
                 email: 'emily.smith@example.com',
                 phone: '555-555-2342',
-                
+                address: 'new clean0smith, california'
             }                                               
         
 
