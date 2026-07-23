@@ -114,7 +114,8 @@ function Users() {
                 id:17, name: 'farwah shah',
                 email: 'farwah.shah@example.com',
                 phone: '555-555-2347',
-                address: 'roly state, new-york city'
+                address: 'roly state, new-york city',
+                image: 'https://randomuser.me/api/portriats/women/17.jpg'
                 
             }                                          
         
