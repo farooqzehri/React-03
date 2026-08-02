@@ -119,7 +119,7 @@ function Users() {
                 
             },
             {
-                id: 18,
+                id: 18, name: 'jordan smith',
             }                                   
         
 
