@@ -123,6 +123,7 @@ function Users() {
                 email: 'jordan.smith@example.com',
                 phone: '555-555-2348',
                 address: 'new-york city, state of malbury',
+                image: 'https://randomuser.me/api/portriats/men/18.jpg'
             }                                   
         
 
