@@ -126,7 +126,7 @@ function Users() {
                 image: 'https://randomuser.me/api/portriats/men/18.jpg'
             },
             {
-                id: 19;
+                id: 19, name: 'alice jenner',
             }                     
         
 
