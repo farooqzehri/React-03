@@ -131,7 +131,10 @@ function Users() {
                 phone: '555-555-3423',
                 address: 'new-york new jersey , usa',
                 image: 'https://randomuser.me/api/portriats/women/18.jpg'
-            }                     
+            },
+            {
+                id: 20, 
+            }
         
 
     ]
