@@ -133,7 +133,9 @@ function Users() {
                 image: 'https://randomuser.me/api/portriats/women/18.jpg'
             },
             {
-                id: 20, name: 'mike tyson'
+                id: 20, name: 'mike tyson',
+                email: 'mike.tyson@example.com'
+
             }
         
 
