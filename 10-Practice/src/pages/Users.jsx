@@ -139,6 +139,9 @@ function Users() {
                 address: 'new-york city,',
                 image: 'https://randomuser.me/api/portriats/men/20.jpg'
 
+            },
+            {
+                id: 21,
             }
         
 
