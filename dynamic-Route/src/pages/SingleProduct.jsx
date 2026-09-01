@@ -12,7 +12,6 @@ function SingleProduct() {
     .then(res => res.json())
     .then(res => {
       setData(res)
-      console.log(res);
       
     }).catch(() => {
       setError(true)

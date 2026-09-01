@@ -8,17 +8,20 @@ function Todo() {
 
     const addTodo = async (e) => {
       e.preventDefault()
-      console.log(title , description);
+      if (!title.trim()) {
+        alert('Title is required.')
+        return
+      }
 
       const {data , error} = await supabase
       .from('todo')
-      .insert([{title : title , description : description}])
+      .insert([{title : title.trim() , description : description.trim()}])
       .select()
 
       if (error) {
-        console.log(error);        
+        alert(error.message)      
       } else {
-        console.log(data);
+        fetchTodo()
         
       }
       setDescription('')
@@ -31,9 +34,8 @@ function Todo() {
       .order('created_at' , {ascending : false})
 
       if (error) {
-         console.log(error.message);
+         alert(error.message)
          } else {
-          console.log(data);
           setTodo(data)
           
          }

@@ -6,18 +6,15 @@ function Todo() {
   const [innerInput , setInnerInput] = useState('')
   const [innerTodo , setInnerTodo] = useState([])
   const createTicket = () => {
-    console.log(title);
     setLists([...lists , {
       listName: title,
       id: Date.now(),
       todo: []
     }])
-    console.log(lists);
     
     
   }
   const innerInputBtn = (e) => {
-    console.log(innerInput);
     e.preventDefault()
     innerTodo.push({innerInput})
     

@@ -14,15 +14,10 @@ const sendMessage = async () => {
 
     try {
 
-        const res = await fetch("http://localhost:5000/chat", {
-           model: 'google/gemini-3-flash-preview',
+        const apiUrl = import.meta.env.VITE_CHAT_API_URL || "http://localhost:5000/chat";
+        const res = await fetch(apiUrl, {
             method: "POST",
-             messages: [
-             {
-              role: "user",
-               content: "How many r's are in the word 'strawberry'?"
-                  }
-                      ],
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ message })
         });
 
@@ -31,7 +26,7 @@ const sendMessage = async () => {
         setReply(data.choices[0].message.content);
 
     } catch(err){
-        console.log(err);
+        setReply("Something went wrong. Please try again.");
     }
 
     setLoading(false);

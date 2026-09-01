@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { supabase } from '../supabase'
 import { useNavigate } from 'react-router-dom'
 
@@ -9,12 +9,9 @@ function Home() {
         const getUser = async () => {
             const { data, error } = await supabase.auth.getUser()
             if (error) {
-                console.log(error.message);
                 navigate('/login')
                 return
-
             }
-            console.log('user:', data.user);
 
         }
         getUser()

@@ -11,7 +11,7 @@ export const App = () => {
         setData(res.data.products);
       })
       .catch((err) => {
-        console.log(err);
+        setLoading(false);
       })
       .finally(() => {
         setLoading(false);

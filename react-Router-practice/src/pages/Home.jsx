@@ -10,7 +10,6 @@ function Home() {
     fetch('https://fakestoreapiserver.reactbd.org/api/products')
     .then(res => res.json())
     .then(res => {
-        console.log(res.data);
         setData(res.data)
     }).catch(err => {
         setError(err)
