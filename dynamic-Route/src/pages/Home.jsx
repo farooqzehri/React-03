@@ -9,13 +9,14 @@ function Home() {
 
     useEffect(() => {
         fetch('https://dummyjson.com/products')
-        .then(res => res.json())
         .then(res => {
-            console.log(res.products);
+            if (!res.ok) throw new Error(`HTTP error: ${res.status}`)
+            return res.json()
+        })
+        .then(res => {
             setData(res.products)
-            
-        }).catch(() => {
-            setError(true)
+        }).catch((err) => {
+            setError(err.message || 'Failed to fetch products')
         }).finally(() => {
             setLoading(false)
         })

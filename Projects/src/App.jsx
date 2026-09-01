@@ -3,12 +3,16 @@ import React, { useEffect, useState } from "react";
 function App() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     fetch("https://api.freeapi.app/api/v1/public/randomproducts")
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP error: ${res.status}`);
+        return res.json();
+      })
       .then(res => setProducts(res.data.data))
-      .catch(err => console.error(err))
+      .catch(err => setError(err.message || "Failed to load products"))
       .finally(() => setLoading(false));
   }, []);
 
@@ -22,6 +26,12 @@ function App() {
       {loading && (
         <div className="flex justify-center mt-32">
           <div className="w-14 h-14 border-4 border-zinc-700 border-t-emerald-400 rounded-full animate-spin"></div>
+        </div>
+      )}
+
+      {error && (
+        <div className="text-center text-red-400 text-xl mt-10">
+          {error}
         </div>
       )}
 

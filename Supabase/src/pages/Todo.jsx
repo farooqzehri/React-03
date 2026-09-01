@@ -5,10 +5,11 @@ function Todo() {
     const [title , setTitle] = useState('')
     const [description , setDescription] = useState('')
     const [todo , setTodo] = useState([])
+    const [errorMsg, setErrorMsg] = useState('')
 
     const addTodo = async (e) => {
       e.preventDefault()
-      console.log(title , description);
+      setErrorMsg('')
 
       const {data , error} = await supabase
       .from('todo')
@@ -16,10 +17,9 @@ function Todo() {
       .select()
 
       if (error) {
-        console.log(error);        
+        setErrorMsg(error.message || 'Failed to add todo')
       } else {
-        console.log(data);
-        
+        setTodo(prev => [data[0], ...prev])
       }
       setDescription('')
       setTitle('')
@@ -31,11 +31,9 @@ function Todo() {
       .order('created_at' , {ascending : false})
 
       if (error) {
-         console.log(error.message);
+         setErrorMsg(error.message || 'Failed to fetch todos')
          } else {
-          console.log(data);
           setTodo(data)
-          
          }
     }
     useEffect(() => {
@@ -44,6 +42,7 @@ function Todo() {
   return (
     <>
     <h5>Todo</h5>
+    {errorMsg && <p style={{color: 'red'}}>{errorMsg}</p>}
     <form onSubmit={addTodo}>
         <input type="text" value={title} placeholder='Enter Title.' onChange={(e) => setTitle(e.target.value)} />
         <input type="text" value={description} placeholder='Enter Description.' onChange={(e) => setDescription(e.target.value)} />

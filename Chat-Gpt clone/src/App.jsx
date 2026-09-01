@@ -5,12 +5,14 @@ function App() {
 const [message, setMessage] = useState("");
 const [reply, setReply] = useState("");
 const [loading, setLoading] = useState(false);
+const [error, setError] = useState("");
 
 const sendMessage = async () => {
 
     if(!message) return;
 
     setLoading(true);
+    setError("");
 
     try {
 
@@ -26,12 +28,14 @@ const sendMessage = async () => {
             body: JSON.stringify({ message })
         });
 
+        if (!res.ok) throw new Error(`Server error: ${res.status}`);
+
         const data = await res.json();
 
         setReply(data.choices[0].message.content);
 
     } catch(err){
-        console.log(err);
+        setError(err.message || "Failed to send message");
     }
 
     setLoading(false);
@@ -53,6 +57,8 @@ return (
     </button>
 
     {loading && <p>Thinking... 🤔</p>}
+
+    {error && <p style={{color:"red"}}>{error}</p>}
 
     <h3>{reply}</h3>
 

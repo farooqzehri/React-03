@@ -23,6 +23,10 @@ function Home() {
     // sign out user
     const signOutUser = async () => {
         const { error } = await supabase.auth.signOut()
+        if (error) {
+            alert(error.message || 'Failed to sign out')
+            return
+        }
         navigate('/login')
     }
     return (

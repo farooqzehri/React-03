@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 export const App = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     axios("https://dummyjson.com/products")
@@ -11,7 +12,7 @@ export const App = () => {
         setData(res.data.products);
       })
       .catch((err) => {
-        console.log(err);
+        setError(err.message || "Failed to load products");
       })
       .finally(() => {
         setLoading(false);
@@ -35,7 +36,15 @@ export const App = () => {
         </div>
       )}
 
-      {!loading && (
+      {error && (
+        <div className="flex justify-center items-center h-40">
+          <h1 className="text-2xl font-semibold text-red-600">
+            {error}
+          </h1>
+        </div>
+      )}
+
+      {!loading && !error && (
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {data.map((item) => (
             <div
