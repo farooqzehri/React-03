@@ -142,7 +142,10 @@ function Users() {
             },
             {
                 id: 21, name: 'gogins',
-                email: 'gogins@example.com'
+                email: 'gogins@example.com',
+                phone: '555-555-2575',
+                address: "califorania LA",
+                
             }
         
 
