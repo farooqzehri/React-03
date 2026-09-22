@@ -141,7 +141,8 @@ function Users() {
 
             },
             {
-                id: 21, name: 'gogins'
+                id: 21, name: 'gogins',
+                email: 'gogins@example.com'
             }
         
 
